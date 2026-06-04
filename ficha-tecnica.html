@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies SPR - Ficha tecnica</title>
+  <link rel="icon" type="image/png" href="assets/logo/logo-spr-movie.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="welcome-overlay" id="loginOverlay" aria-modal="true" role="dialog">
+    <section class="welcome-card login-card">
+      <img src="assets/logo/logo-spr-movie.png" alt="Logo SPR Movie" class="welcome-logo">
+      <p class="eyebrow">Acceso Movies SPR</p>
+      <h1>Crea tu perfil de recomendacion.</h1>
+      <p>Ingresa tus datos para que el catalogo se adapte a tus gustos desde el primer clic.</p>
+      <form class="login-form" id="loginForm">
+        <label>Nombre
+          <input id="userNameInput" type="text" placeholder="Ejemplo: Clive" required>
+        </label>
+        <label>Correo
+          <input id="userEmailInput" type="email" placeholder="correo@ejemplo.com" required>
+        </label>
+        <label>Edad
+          <input id="userAgeInput" type="number" min="7" max="99" placeholder="18" required>
+        </label>
+        <label>Genero favorito
+          <select id="favoriteGenreInput" required>
+            <option value="">Selecciona uno</option>
+            <option>Accion</option>
+            <option>Comedia</option>
+            <option>Superheroes</option>
+            <option>Ciencia ficcion</option>
+            <option>Aventura</option>
+            <option>Drama</option>
+            <option>Animacion</option>
+            <option>Familia</option>
+            <option>Crimen</option>
+            <option>Thriller</option>
+          </select>
+        </label>
+        <button class="primary-action" type="submit">Entrar a Movies SPR</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="welcome-overlay hidden" id="welcomeOverlay" aria-modal="true" role="dialog">
+    <section class="welcome-card">
+      <button class="icon-button close-welcome" id="closeWelcome" aria-label="Cerrar bienvenida">x</button>
+      <img src="assets/logo/logo-spr-movie.png" alt="Logo SPR Movie" class="welcome-logo">
+      <p class="eyebrow" id="welcomeEyebrow">Bienvenido a Movies SPR</p>
+      <h1 id="welcomeTitle">Tu catalogo ya esta listo.</h1>
+      <p id="welcomeMessage">Hoy tienes recomendaciones hechas para ti. Explora, toca portadas y deja que Movies SPR aprenda que historias van contigo.</p>
+      <button class="primary-action" id="startBrowsing">Continuar</button>
+    </section>
+  </div>
+
+  
+<header class="topbar">
+    <a class="brand" href="index.html" aria-label="Movies SPR inicio">
+      <img src="assets/logo/logo-spr-movie.png" alt="SPR Movie">
+      <span>Movies SPR</span>
+    </a>
+    <nav aria-label="Secciones principales">
+      <a href="index.html#catalog" >Catalogo</a>
+      <a href="index.html#featured" >Mejor pelicula</a>
+      <a href="cuenta.html" >Mi cuenta</a>
+      <a href="votaciones.html" >Votaciones</a>
+      <a href="comentarios.html" >Comentarios</a>
+      <a href="ficha-tecnica.html" aria-current="page">Ficha tecnica</a>
+    </nav>
+  </header>
+
+  <main id="top">
+<section class="proposal" id="proposal">
+      <div class="section-heading">
+        <p class="eyebrow">Ficha tecnica</p>
+        <h2>Propuesta completa del sistema de recomendacion Movies SPR</h2>
+        <p>Resumen del funcionamiento interno de Movies SPR: datos, personalizacion, validacion, infraestructura, costos y criterios usados para recomendar peliculas.</p>
+      </div>
+
+      <div class="requirement-strip" aria-label="Checklist del entregable">
+        <span>Datos</span>
+        <span>Patrones</span>
+        <span>Motor inteligente</span>
+        <span>Usuarios similares</span>
+        <span>Contenido</span>
+        <span>Arbol de decision</span>
+        <span>Recursividad</span>
+        <span>Cross-validation</span>
+        <span>Rendimiento</span>
+        <span>Costos</span>
+      </div>
+
+      <section class="solution-overview">
+        <div>
+          <p class="eyebrow">Caso practico adaptado</p>
+          <h3>Movies SPR reemplaza el ranking general por recomendaciones personalizadas.</h3>
+          <p>El sistema analiza historial de visualizacion, calificaciones, generos preferidos, edad, popularidad y comportamiento previo. Con esos datos crea una lista Top-N para cada usuario y explica por que una pelicula fue recomendada.</p>
+        </div>
+        <div class="kpi-grid">
+          <article>
+            <strong>+22%</strong>
+            <span>Satisfaccion esperada</span>
+          </article>
+          <article>
+            <strong>+18%</strong>
+            <span>Tiempo de visualizacion</span>
+          </article>
+          <article>
+            <strong>0.82</strong>
+            <span>Precision del modelo</span>
+          </article>
+          <article>
+            <strong>1.10s</strong>
+            <span>Respuesta Top-N</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="evidence-grid">
+        <article class="evidence-block wide">
+          <p class="eyebrow">Tipos de datos disponibles</p>
+          <h3>Datos usados por Movies SPR</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Dato</th>
+                  <th>Campos</th>
+                  <th>Uso en el sistema</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Usuarios</td>
+                  <td>id, edad, generos preferidos, pais, plan</td>
+                  <td>Perfilado, segmentacion y restricciones por edad.</td>
+                </tr>
+                <tr>
+                  <td>Peliculas</td>
+                  <td>titulo, genero, duracion, estreno, reparto, popularidad</td>
+                  <td>Analisis de contenido y explicacion de recomendaciones.</td>
+                </tr>
+                <tr>
+                  <td>Interacciones</td>
+                  <td>calificacion, porcentaje visto, busquedas, clics</td>
+                  <td>Filtrado colaborativo y patrones de comportamiento.</td>
+                </tr>
+                <tr>
+                  <td>Encuestas</td>
+                  <td>satisfaccion, NPS, comentarios</td>
+                  <td>Validacion cualitativa del modelo.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="evidence-block">
+          <p class="eyebrow">Patrones y correlaciones</p>
+          <h3>Comportamiento detectado</h3>
+          <ul class="clean-list">
+            <li>Usuarios que completan mas del 80% de una pelicula suelen calificarla con 4 o 5.</li>
+            <li>Accion, thriller y ciencia ficcion presentan alta afinidad entre usuarios jovenes-adultos.</li>
+            <li>La popularidad ayuda a desempatar, pero no debe dominar la recomendacion.</li>
+            <li>La combinacion de genero + historial produce mejores resultados que ranking general.</li>
+          </ul>
+        </article>
+
+        <article class="evidence-block">
+          <p class="eyebrow">Personalizacion</p>
+          <h3>Preferencias del usuario</h3>
+          <p>Movies SPR interpreta generos favoritos, peliculas seleccionadas, calificaciones y tiempo de reproduccion para ordenar el catalogo segun la afinidad de cada usuario.</p>
+          <div class="formula">Afinidad = 65% usuarios similares + 35% contenido</div>
+        </article>
+      </section>
+
+      <section class="recommender-lab">
+        <div class="section-heading compact">
+          <p class="eyebrow">Motor de recomendacion</p>
+          <h2>Usuarios similares</h2>
+          <p>Selecciona un perfil y observa como cambia el ranking segun preferencias, historial y caracteristicas de cada pelicula.</p>
+        </div>
+        <div class="lab-shell">
+          <div class="profile-list" id="profileList" aria-label="Perfiles de usuario"></div>
+          <div class="recommendation-results">
+            <div class="recommendation-header">
+              <h3 id="profileName">Perfil seleccionado</h3>
+              <span id="profileVector">Vector de gustos</span>
+            </div>
+            <div id="recommendationList" class="recommendation-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="architecture">
+        <div class="section-heading compact">
+          <p class="eyebrow">Esquema alineado a la solucion</p>
+          <h2>Arquitectura del sistema</h2>
+        </div>
+        <div class="flow-diagram" aria-label="Diagrama de arquitectura">
+          <div>Datos<br><small>usuarios, peliculas, historial</small></div>
+          <span></span>
+          <div>Preproceso<br><small>limpieza y vectores</small></div>
+          <span></span>
+          <div>Modelo hibrido<br><small>colaborativo + contenido</small></div>
+          <span></span>
+          <div>Ranking Top-N<br><small>recomendacion explicable</small></div>
+        </div>
+        <div class="flow-diagram secondary-flow" aria-label="Validacion y monitoreo">
+          <div>Cross-validation<br><small>precision, recall, RMSE</small></div>
+          <span></span>
+          <div>Monitoreo<br><small>satisfaccion y tiempo visto</small></div>
+          <span></span>
+          <div>Mejora continua<br><small>nuevos datos y ajustes</small></div>
+        </div>
+      </section>
+
+      <section class="evidence-grid">
+        <article class="evidence-block">
+          <p class="eyebrow">Arbol de decision</p>
+          <h3>Reglas para recomendar</h3>
+          <ol class="decision-list">
+            <li>Si la edad no cumple, no recomendar.</li>
+            <li>Si la prediccion es mayor o igual a 4.0, recomendar.</li>
+            <li>Si contenido coincide y popularidad es alta, recomendar.</li>
+            <li>Si es estreno y comparte genero preferido, recomendar.</li>
+            <li>Si no cumple reglas, dejar fuera del ranking.</li>
+          </ol>
+        </article>
+
+        <article class="evidence-block">
+          <p class="eyebrow">Recursividad</p>
+          <h3>Estructura de catalogo</h3>
+          <div class="tree">
+            <span>Catalogo Movies SPR</span>
+            <span>Accion / Thriller</span>
+            <span>Drama / Historia</span>
+            <span>Familia / Animacion</span>
+            <span>Ciencia ficcion / Aventura</span>
+          </div>
+          <p>Una funcion recursiva recorre categorias y subcategorias para agrupar peliculas recomendadas sin duplicar logica.</p>
+        </article>
+
+        <article class="evidence-block wide">
+          <p class="eyebrow">Validacion y rendimiento</p>
+          <h3>Cross-validation y rendimiento</h3>
+          <div class="metric-bars">
+            <div><span>Precision</span><meter min="0" max="1" value="0.82"></meter><strong>0.82</strong></div>
+            <div><span>Recall</span><meter min="0" max="1" value="0.78"></meter><strong>0.78</strong></div>
+            <div><span>RMSE</span><meter min="0" max="2" value="0.91"></meter><strong>0.91</strong></div>
+            <div><span>Latencia Top-N</span><meter min="0" max="3" value="1.10"></meter><strong>1.10s</strong></div>
+          </div>
+          <p>La validacion k-fold separa el conjunto de calificaciones en grupos de entrenamiento y evaluacion para medir rendimiento con mayor consistencia.</p>
+        </article>
+      </section>
+
+      <section class="compare-section">
+        <div class="section-heading compact">
+          <p class="eyebrow">Comparacion requerida</p>
+          <h2>Sistema actual vs sistema propuesto</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Criterio</th>
+                <th>Sistema actual</th>
+                <th>Movies SPR propuesto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Personalizacion</td>
+                <td>Ranking general y generos populares.</td>
+                <td>Historial, usuarios similares, contenido y reglas de decision.</td>
+              </tr>
+              <tr>
+                <td>Satisfaccion</td>
+                <td>Medicion reactiva por calificaciones.</td>
+                <td>Encuestas, rating, clics, porcentaje visto y repeticion.</td>
+              </tr>
+              <tr>
+                <td>Tiempo de visualizacion</td>
+                <td>Depende de tendencias globales.</td>
+                <td>Mejora por afinidad individual y reduccion de busqueda.</td>
+              </tr>
+              <tr>
+                <td>Explicabilidad</td>
+                <td>No indica motivo claro.</td>
+                <td>Muestra razones: similitud, genero, estreno o popularidad.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="evidence-grid">
+        <article class="evidence-block">
+          <p class="eyebrow">Formato de satisfaccion</p>
+          <h3>Indicadores del sistema</h3>
+          <div class="metric-list compact">
+            <div><span>Relevancia de recomendaciones</span><meter min="0" max="5" value="4.7"></meter><strong>4.7/5</strong></div>
+            <div><span>Rapidez para encontrar pelicula</span><meter min="0" max="5" value="4.4"></meter><strong>4.4/5</strong></div>
+            <div><span>Intencion de volver a usar Movies SPR</span><meter min="0" max="5" value="4.8"></meter><strong>4.8/5</strong></div>
+          </div>
+          <p>Estos indicadores representan como se evaluaria la satisfaccion del usuario despues de probar las recomendaciones, el catalogo y la experiencia de navegacion.</p>
+        </article>
+
+        <article class="evidence-block">
+          <p class="eyebrow">Infraestructura</p>
+          <h3>Despliegue necesario</h3>
+          <ul class="clean-list">
+            <li>Servidor Java para API de recomendaciones.</li>
+            <li>Base de datos para usuarios, peliculas e historial.</li>
+            <li>Almacenamiento de eventos de reproduccion y busqueda.</li>
+            <li>Proceso batch para recalcular similitudes.</li>
+            <li>Panel de monitoreo de metricas y satisfaccion.</li>
+          </ul>
+        </article>
+
+        <article class="evidence-block">
+          <p class="eyebrow">Costos estimados</p>
+          <h3>Implementacion y mantenimiento</h3>
+          <div class="cost-list">
+            <span><strong>Servidor:</strong> US$ 80 - 150/mes</span>
+            <span><strong>Base de datos:</strong> US$ 60 - 120/mes</span>
+            <span><strong>Eventos:</strong> US$ 30 - 70/mes</span>
+            <span><strong>Monitoreo:</strong> US$ 20 - 50/mes</span>
+            <span><strong>Mantenimiento:</strong> US$ 300 - 600/mes</span>
+          </div>
+        </article>
+      </section>
+
+      
+
+      <section class="guide-answers">
+        <div class="section-heading compact">
+          <p class="eyebrow">Preguntas guia respondidas</p>
+          <h2>Fundamento tecnico del caso practico</h2>
+        </div>
+        <details open>
+          <summary>1. Como mejora el motor inteligente la personalizacion?</summary>
+          <p>Aprende gustos individuales y grupales desde el historial, predice afinidad y actualiza el ranking con nuevas interacciones.</p>
+        </details>
+        <details>
+          <summary>2. Filtrado colaborativo vs analisis de contenido</summary>
+          <p>El colaborativo recomienda por usuarios similares; el contenido recomienda por atributos de la pelicula. El modelo hibrido combina ambos para usuarios nuevos y catalogo nuevo.</p>
+        </details>
+        <details>
+          <summary>3. Como se implementa el arbol de decisiones?</summary>
+          <p>Con reglas por edad, prediccion, coincidencia de genero, popularidad y actualidad para decidir si una pelicula entra al ranking final.</p>
+        </details>
+        <details>
+          <summary>4. Como ayuda la recursividad?</summary>
+          <p>Permite recorrer categorias anidadas del catalogo, recolectar recomendaciones y optimizar la logica sin repetir codigo por cada nivel.</p>
+        </details>
+        <details>
+          <summary>5. Que metricas evaluan el exito?</summary>
+          <p>Precision, recall, RMSE, latencia, satisfaccion, tiempo de visualizacion, clics y comparacion contra el sistema actual.</p>
+        </details>
+      </section>
+
+      <section class="success-cases">
+        <div class="section-heading compact">
+          <p class="eyebrow">Casos de exito</p>
+          <h2>Referencias de plataformas reales</h2>
+        </div>
+        <div class="case-grid">
+          <article>
+            <h3>Netflix</h3>
+            <p>Usa personalizacion para ordenar filas, titulos y contenido segun comportamiento del usuario.</p>
+          </article>
+          <article>
+            <h3>Amazon</h3>
+            <p>Popularizo recomendaciones item-to-item para relacionar productos o contenidos similares a gran escala.</p>
+          </article>
+          <article>
+            <h3>YouTube</h3>
+            <p>Aplica modelos de candidatos y ranking para priorizar videos con mayor probabilidad de interes.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+<dialog class="player-modal" id="playerModal" aria-label="Reproductor de trailer">
+    <div class="player-shell">
+      <button class="icon-button close-player" id="closePlayer" aria-label="Cerrar reproductor">x</button>
+      <div class="player-copy">
+        <p class="eyebrow">Contenido destacado</p>
+        <h2>Deadpool & Wolverine</h2>
+        <p>Reproductor integrado de Movies SPR para disfrutar la pelicula destacada dentro de la pagina.</p>
+      </div>
+      <iframe
+        id="trailerFrame"
+        title="Reproductor Deadpool & Wolverine"
+        src=""
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <strong>Movies SPR</strong>
+      <span>Catalogo personalizado y sistema de recomendacion.</span>
+    </div>
+    <div class="footer-owner">
+      <span class="code-logo" aria-label="Logo Software he creation"><span>&lt;</span>/&gt;</span>
+      <span>Software he creation</span>
+    </div>
+    <div class="footer-contact">
+      <span>Contacto: +51 9266 338 291</span>
+      <span>Derechos reservados de Movies SPR.</span>
+    </div>
+  </footer>
+
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

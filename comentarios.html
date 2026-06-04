@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies SPR - Comentarios</title>
+  <link rel="icon" type="image/png" href="assets/logo/logo-spr-movie.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="welcome-overlay" id="loginOverlay" aria-modal="true" role="dialog">
+    <section class="welcome-card login-card">
+      <img src="assets/logo/logo-spr-movie.png" alt="Logo SPR Movie" class="welcome-logo">
+      <p class="eyebrow">Acceso Movies SPR</p>
+      <h1>Crea tu perfil de recomendacion.</h1>
+      <p>Ingresa tus datos para que el catalogo se adapte a tus gustos desde el primer clic.</p>
+      <form class="login-form" id="loginForm">
+        <label>Nombre
+          <input id="userNameInput" type="text" placeholder="Ejemplo: Clive" required>
+        </label>
+        <label>Correo
+          <input id="userEmailInput" type="email" placeholder="correo@ejemplo.com" required>
+        </label>
+        <label>Edad
+          <input id="userAgeInput" type="number" min="7" max="99" placeholder="18" required>
+        </label>
+        <label>Genero favorito
+          <select id="favoriteGenreInput" required>
+            <option value="">Selecciona uno</option>
+            <option>Accion</option>
+            <option>Comedia</option>
+            <option>Superheroes</option>
+            <option>Ciencia ficcion</option>
+            <option>Aventura</option>
+            <option>Drama</option>
+            <option>Animacion</option>
+            <option>Familia</option>
+            <option>Crimen</option>
+            <option>Thriller</option>
+          </select>
+        </label>
+        <button class="primary-action" type="submit">Entrar a Movies SPR</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="welcome-overlay hidden" id="welcomeOverlay" aria-modal="true" role="dialog">
+    <section class="welcome-card">
+      <button class="icon-button close-welcome" id="closeWelcome" aria-label="Cerrar bienvenida">x</button>
+      <img src="assets/logo/logo-spr-movie.png" alt="Logo SPR Movie" class="welcome-logo">
+      <p class="eyebrow" id="welcomeEyebrow">Bienvenido a Movies SPR</p>
+      <h1 id="welcomeTitle">Tu catalogo ya esta listo.</h1>
+      <p id="welcomeMessage">Hoy tienes recomendaciones hechas para ti. Explora, toca portadas y deja que Movies SPR aprenda que historias van contigo.</p>
+      <button class="primary-action" id="startBrowsing">Continuar</button>
+    </section>
+  </div>
+
+  
+<header class="topbar">
+    <a class="brand" href="index.html" aria-label="Movies SPR inicio">
+      <img src="assets/logo/logo-spr-movie.png" alt="SPR Movie">
+      <span>Movies SPR</span>
+    </a>
+    <nav aria-label="Secciones principales">
+      <a href="index.html#catalog" >Catalogo</a>
+      <a href="index.html#featured" >Mejor pelicula</a>
+      <a href="cuenta.html" >Mi cuenta</a>
+      <a href="votaciones.html" >Votaciones</a>
+      <a href="comentarios.html" aria-current="page">Comentarios</a>
+      <a href="ficha-tecnica.html" >Ficha tecnica</a>
+    </nav>
+  </header>
+
+  <main id="top">
+<section class="page-hero"><p class="eyebrow">Comunidad</p><h1>Comentarios de usuarios</h1><p>Comparte tu experiencia, responde a otros usuarios y reacciona con pulgar arriba o abajo.</p></section>
+
+
+<section class="comments-page-shell">
+  <article class="evidence-block comment-compose-card">
+    <p class="eyebrow">Comunidad</p>
+    <h2>Publicar comentario</h2>
+    <form class="survey-form" id="surveyForm">
+      <label>Relevancia de recomendaciones <input type="range" min="1" max="5" value="5"></label>
+      <label>Rapidez para encontrar pelicula <input type="range" min="1" max="5" value="4"></label>
+      <label>Volveria a usar Movies SPR <input type="range" min="1" max="5" value="5"></label>
+      <textarea id="commentInput" placeholder="Escribe tu comentario para Movies SPR"></textarea>
+      <button class="primary-action" type="submit">Publicar comentario</button>
+      <p class="form-status" id="surveyStatus" aria-live="polite"></p>
+    </form>
+  </article>
+</section>
+
+<section class="comments-section">
+        <div class="section-heading compact">
+          <p class="eyebrow">Comunidad</p>
+          <h2>Feed de comentarios</h2>
+          <p>Los comentarios publicados por los usuarios aparecen con nombre, fecha, respuestas y reacciones.</p>
+        </div>
+        <div class="comments-feed" id="commentsFeed" aria-live="polite"></div>
+      </section>
+  </main>
+
+<dialog class="player-modal" id="playerModal" aria-label="Reproductor de trailer">
+    <div class="player-shell">
+      <button class="icon-button close-player" id="closePlayer" aria-label="Cerrar reproductor">x</button>
+      <div class="player-copy">
+        <p class="eyebrow">Contenido destacado</p>
+        <h2>Deadpool & Wolverine</h2>
+        <p>Reproductor integrado de Movies SPR para disfrutar la pelicula destacada dentro de la pagina.</p>
+      </div>
+      <iframe
+        id="trailerFrame"
+        title="Reproductor Deadpool & Wolverine"
+        src=""
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <strong>Movies SPR</strong>
+      <span>Catalogo personalizado y sistema de recomendacion.</span>
+    </div>
+    <div class="footer-owner">
+      <span class="code-logo" aria-label="Logo Software he creation"><span>&lt;</span>/&gt;</span>
+      <span>Software he creation</span>
+    </div>
+    <div class="footer-contact">
+      <span>Contacto: +51 9266 338 291</span>
+      <span>Derechos reservados de Movies SPR.</span>
+    </div>
+  </footer>
+
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
