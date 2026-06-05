@@ -4,7 +4,7 @@ const movies = [
     title: "Deadpool & Wolverine",
     year: "2024",
     release: "26 de julio de 2024",
-    runtime: "127 min",
+    runtime: "2:08:37",
     genres: ["Accion", "Comedia", "Superheroes"],
     rating: 7.6,
     director: "Shawn Levy",
