@@ -7,7 +7,7 @@
 **Nombre del proyecto:** Movies SPR  
 **Curso:** Artificial Intelligence with Machine Learning in Java  
 **Empresa del caso:** Movies SPR  
-**Contacto:** +51 9266 338 291  
+**Contacto:** +51 926 338 291  
 **Marca asociada:** Software he creation  
 **Logo de Software he creation:** `</>` con el primer `<` en color rojo  
 
